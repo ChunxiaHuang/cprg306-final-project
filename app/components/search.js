@@ -30,7 +30,7 @@ export default function Search(){
         const BASE_URL = 'https://gateway.marvel.com:443/v1/public';
         const hash = md5(ts + PRIVATE_KEY + PUBLIC_KEY);
         const url = `${BASE_URL}/characters?apikey=${PUBLIC_KEY}&hash=${hash}&ts=${ts}&nameStartsWith=${characterName}`;
-        console.log(PUBLIC_KEY);
+        //console.log(PUBLIC_KEY);
 
         try {
             const response = await fetch(url);
@@ -110,7 +110,7 @@ return (
     )}
 
     {!loading && characterData && characterData.results.length === 0 && (
-        <div className="text-center mt-4 text-red-500">
+        <div className="text-center mt-20 text-red-500">
             No characters found.
         </div>
     )}
@@ -120,7 +120,7 @@ return (
     )}
 
     {!loading && comicData && comicData.results.length === 0 && (
-        <div className="text-center mt-4 text-red-500">
+        <div className="text-center mt-20 text-red-500">
             No comics found for this character.
         </div>
     )}
